@@ -39,7 +39,7 @@
                             <div class="card-body">
 
                                 <h3 class="card-title">Sản Phẩm</h3>
-
+                                <?php if($list_product) { ?>
                                 <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
                                         <tr>
@@ -50,28 +50,24 @@
                                             <th>Tùy chọn</th>
                                         </tr>
                                     </thead>
-
-
                                     <tbody>
+                                    <?php foreach ($list_product as $product) {
+
+                                        ?>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
+                                            <td><?= $product->tensp ?></td>
+                                            <td><?= $product->loaisp ?></td>
+                                            <td><?= $product->giasp ?></td>
+                                            <td><?= $product->ngaydang ?></td>
+                                            <td><div class="col-xl-3 col-lg-4 col-sm-6">
+                                                    <i class="uil-edit"></i> uil-edit
+                                                </div></td>
 
                                         </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                        </tr>
-
+                                    <?php } ?>
                                     </tbody>
                                 </table>
-
+                                <?php } ?>
                             </div>
                         </div>
                     </div> <!-- end col -->
