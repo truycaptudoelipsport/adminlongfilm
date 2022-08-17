@@ -32,7 +32,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->get('/lang/{locale}', 'Language::index');
+//Sản phẩm
+$routes->add('product','ProductController::index');
 
 //Layout page routing
 $routes->get('layouts-horizontal', 'Home::show_layouts_horizontal');

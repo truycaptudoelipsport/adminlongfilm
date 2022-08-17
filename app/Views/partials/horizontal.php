@@ -520,22 +520,6 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="topnav-layout-verti">
                                         <a href="layouts-dark-sidebar" class="dropdown-item"><?= lang('Files.Dark Sidebar') ?></a>
-                                        <a href="layouts-compact-sidebar" class="dropdown-item"><?= lang('Files.Compact Sidebar') ?></a>
-                                        <a href="layouts-icon-sidebar" class="dropdown-item"><?= lang('Files.Icon Sidebar') ?></a>
-                                        <a href="layouts-boxed" class="dropdown-item"><?= lang('Files.Boxed Width') ?></a>
-                                        <a href="layouts-preloader" class="dropdown-item"><?= lang('Files.Preloader') ?></a>
-                                        <a href="layouts-colored-sidebar" class="dropdown-item"><?= lang('Files.Colored Sidebar') ?></a>
-                                    </div>
-                                </div>
-                                <div class="dropdown">
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-layout-hori" role="button">
-                                    <?= lang('Files.Horizontal') ?> <div class="arrow-down"></div>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="topnav-layout-hori">
-                                        <a href="layouts-horizontal" class="dropdown-item"><?= lang('Files.Horizontal') ?></a>
-                                        <a href="layouts-hori-topbar-dark" class="dropdown-item"><?= lang('Files.Dark Topbar') ?></a>
-                                        <a href="layouts-hori-boxed-width" class="dropdown-item"><?= lang('Files.Boxed Width') ?></a>
-                                        <a href="layouts-hori-preloader" class="dropdown-item"><?= lang('Files.Preloader') ?></a>
                                     </div>
                                 </div>
                             </div>

@@ -40,7 +40,12 @@
                         <span><?= lang('Files.Dashboard') ?></span>
                     </a>
                 </li>
-
+                <li>
+                    <a href="<?php echo base_url('product') ?>">
+                        <i class="fas fa-store"></i>
+                        <span>Sản Phẩm</span>
+                    </a>
+                </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-window-section"></i>
@@ -51,11 +56,6 @@
                             <a href="javascript: void(0);" class="has-arrow"><?= lang('Files.Vertical') ?></a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="layouts-dark-sidebar"><?= lang('Files.Dark Sidebar') ?></a></li>
-                                <li><a href="layouts-compact-sidebar"><?= lang('Files.Compact Sidebar') ?></a></li>
-                                <li><a href="layouts-icon-sidebar"><?= lang('Files.Icon Sidebar') ?></a></li>
-                                <li><a href="layouts-boxed"><?= lang('Files.Boxed Width') ?></a></li>
-                                <li><a href="layouts-preloader"><?= lang('Files.Preloader') ?></a></li>
-                                <li><a href="layouts-colored-sidebar"><?= lang('Files.Colored Sidebar') ?></a></li>
                             </ul>
                         </li>
                         <li>
