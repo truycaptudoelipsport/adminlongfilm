@@ -8,7 +8,6 @@ class ProductModel extends Model
     protected $primaryKey = 'id';
     public function get_products(){
         $db = db_connect();
-
         $query = $db->query('SELECT * FROM product');
         
         return $results = $query->getResult();;

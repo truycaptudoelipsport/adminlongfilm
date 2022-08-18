@@ -4,6 +4,7 @@
 <head>
 
     <?= $title_meta ?>
+    <?= $this->include('partials/head-css') ?>
 
     <!-- DataTables -->
     <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -11,9 +12,6 @@
 
     <!-- Responsive datatable examples -->
     <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
-    <?= $this->include('partials/head-css') ?>
-
 </head>
 
 <?= $this->include('partials/body') ?>
@@ -47,7 +45,7 @@
                                             <th>Loại sản phẩm</th>
                                             <th>Giá sản phẩm</th>
                                             <th>Ngày đăng lên</th>
-                                            <th>Tùy chọn</th>
+                                            <th width="15%">Tùy chọn</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -59,10 +57,10 @@
                                             <td><?= $product->loaisp ?></td>
                                             <td><?= $product->giasp ?></td>
                                             <td><?= $product->ngaydang ?></td>
-                                            <td><div class="col-xl-3 col-lg-4 col-sm-6">
-                                                    <i class="uil-edit"></i> uil-edit
-                                                </div></td>
-
+                                            <td>
+                                                <a href="product/edit/<?=$product->id?>" class="btn btn-outline-secondary waves-effect" role="button"><i class="uil-edit">Sửa</i></a>
+                                                <a href="product/delete/<?=$product->id?>" class="btn btn-danger waves-effect" role="button"><i class="fas fa-trash-alt"> Xóa</i></a>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
