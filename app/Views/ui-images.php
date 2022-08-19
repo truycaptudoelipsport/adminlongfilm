@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mt-4 mt-md-0">
-                                                    <img class="rounded-circle avatar-xl" alt="200x200" src="assets/images/users/avatar-4.jpg" data-holder-rendered="true">
+                                                    <img class="rounded-circle avatar-xl" alt="200x200" src="<?= base_url('assets/images/users/avatar-4.jpg')?>" data-holder-rendered="true">
                                                 </div>
                                             </div>
                                         </div>
@@ -61,7 +61,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mt-4 mt-md-0">
-                                                    <img class="img-thumbnail rounded-circle avatar-xl" alt="200x200" src="assets/images/users/avatar-3.jpg" data-holder-rendered="true">
+                                                    <img class="img-thumbnail rounded-circle avatar-xl" alt="200x200" src="<?= base_url('assets/images/users/avatar-3.jpg')?>" data-holder-rendered="true">
                                                 </div>
                                             </div>
                                         </div>
@@ -100,13 +100,13 @@
                                                 <div class="row">
                                                     <div class="col-lg-4">
                                                         <div>
-                                                            <img src="assets/images/users/avatar-3.jpg" alt="" class="rounded avatar-sm">
+                                                            <img src="<?= base_url('assets/images/users/avatar-3.jpg')?>" alt="" class="rounded avatar-sm">
                                                             <p class="mt-2 mb-lg-0"><code>.avatar-sm</code></p>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <div>
-                                                            <img src="assets/images/users/avatar-4.jpg" alt="" class="rounded avatar-md">
+                                                            <img src="<?= base_url('assets/images/users/avatar-4.jpg')?>" alt="" class="rounded avatar-md">
                                                             <p class="mt-2  mb-lg-0"><code>.avatar-md</code></p>
                                                         </div>
                                                     </div>
@@ -122,13 +122,13 @@
                                                 <div class="row">
                                                     <div class="col-lg-4">
                                                         <div>
-                                                            <img src="assets/images/users/avatar-3.jpg" alt="" class="rounded-circle avatar-sm">
+                                                            <img src="<?= base_url('assets/images/users/avatar-3.jpg')?>" alt="" class="rounded-circle avatar-sm">
                                                             <p class="mt-2 mb-lg-0"><code>.avatar-sm</code></p>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <div>
-                                                            <img src="assets/images/users/avatar-4.jpg" alt="" class="rounded-circle avatar-md">
+                                                            <img src="<?= base_url('assets/images/users/avatar-4.jpg')?>" alt="" class="rounded-circle avatar-md">
                                                             <p class="mt-2  mb-lg-0"><code>.avatar-md</code></p>
                                                         </div>
                                                     </div>
@@ -158,7 +158,7 @@
                                         <!-- Start Media Object -->
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
-                                                <img class="rounded avatar-sm" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image">
+                                                <img class="rounded avatar-sm" src="<?= base_url('assets/images/users/avatar-3.jpg')?>" alt="Generic placeholder image">
                                             </div>
                                             <div class="flex-grow-1">
                                                 <h5>Top-aligned media</h5>

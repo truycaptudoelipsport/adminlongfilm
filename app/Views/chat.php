@@ -31,7 +31,7 @@
                         <div class="p-3 px-4">
                             <div class="d-flex align-items-start">
                                 <div class="flex-shrink-0 me-3 align-self-center">
-                                    <img src="assets/images/users/avatar-4.jpg" class="avatar-xs rounded-circle" alt="">
+                                    <img src="<?= base_url('assets/images/users/avatar-4.jpg')?>" class="avatar-xs rounded-circle" alt="">
                                 </div>
 
                                 <div class="flex-grow-1">
@@ -191,7 +191,7 @@
                                                     <div class="d-flex align-items-start">
                                                         <div class="flex-shrink-0 align-self-center me-3">
                                                             <div class="user-img away">
-                                                                <img src="assets/images/users/avatar-3.jpg" class="rounded-circle avatar-xs" alt="">
+                                                                <img src="<?= base_url('assets/images/users/avatar-3.jpg')?>" class="rounded-circle avatar-xs" alt="">
                                                                 <span class="user-status"></span>
                                                             </div>
                                                         </div>
@@ -212,7 +212,7 @@
                                                     <div class="d-flex align-items-start">
                                                         <div class="flex-shrink-0 align-self-center me-3">
                                                             <div class="user-img">
-                                                                <img src="assets/images/users/avatar-4.jpg" class="rounded-circle avatar-xs" alt="">
+                                                                <img src="<?= base_url('assets/images/users/avatar-4.jpg')?>" class="rounded-circle avatar-xs" alt="">
                                                                 <span class="user-status"></span>
                                                             </div>
                                                         </div>

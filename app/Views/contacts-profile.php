@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="clearfix"></div>
                                     <div>
-                                        <img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-lg rounded-circle img-thumbnail">
+                                        <img src="<?= base_url('assets/images/users/avatar-4.jpg')?>" alt="" class="avatar-lg rounded-circle img-thumbnail">
                                     </div>
                                     <h5 class="mt-3 mb-1">Marcus</h5>
                                     <p class="text-muted">UI/UX Designer</p>
@@ -423,7 +423,7 @@
                                     <div>
                                         <div data-simplebar style="max-height: 430px;">
                                             <div class="d-flex align-items-start border-bottom py-4">
-                                                <img class="me-2 rounded-circle avatar-xs" src="assets/images/users/avatar-3.jpg" alt="">
+                                                <img class="me-2 rounded-circle avatar-xs" src="<?= base_url('assets/images/users/avatar-3.jpg')?>" alt="">
                                                 <div class="flex-grow-1">
                                                     <h5 class="font-size-15 mt-0 mb-1">Marion Walker <small class="text-muted float-end">1 hr ago</small></h5>
                                                     <p class="text-muted">If several languages coalesce, the grammar of the resulting .</p>
@@ -431,7 +431,7 @@
                                                     <a href="javascript: void(0);" class="text-muted font-13 d-inline-block"><i class="mdi mdi-reply"></i> Reply</a>
 
                                                     <div class="d-flex align-items-start mt-4">
-                                                        <img class="me-2 rounded-circle avatar-xs" src="assets/images/users/avatar-4.jpg" alt="">
+                                                        <img class="me-2 rounded-circle avatar-xs" src="<?= base_url('assets/images/users/avatar-4.jpg')?>" alt="">
                                                         <div class="flex-grow-1">
                                                             <h5 class="font-size-15 mt-0 mb-1">Shanon Marvin <small class="text-muted float-end">1 hr ago</small></h5>
                                                             <p class="text-muted">It will be as simple as in fact, it will be Occidental. To it will seem like simplified .</p>

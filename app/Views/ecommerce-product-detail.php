@@ -46,7 +46,7 @@
                                                             <img src="assets/images/product/img-3.png" alt="" class="img-fluid mx-auto d-block tab-img rounded">
                                                         </a>
                                                         <a class="nav-link" id="product-4-tab" data-bs-toggle="pill" href="#product-4" role="tab">
-                                                            <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                            <img src="<?= base_url('assets/images/product/img-6.png')?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -76,7 +76,7 @@
                                                         </div>
                                                         <div class="tab-pane fade" id="product-4" role="tabpanel">
                                                             <div class="product-img">
-                                                                <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block">
+                                                                <img src="<?= base_url('assets/images/product/img-6.png')?>" alt="" class="img-fluid mx-auto d-block">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -230,7 +230,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-3 col-md-2">
                                                         <div>
-                                                            <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block">
+                                                            <img src="<?= base_url('assets/images/product/img-6.png')?>" alt="" class="img-fluid mx-auto d-block">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-9 col-md-10">

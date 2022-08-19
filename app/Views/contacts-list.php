@@ -112,7 +112,7 @@
                                                     </div>
                                                 </th>
                                                 <td>
-                                                    <img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-circle me-2">
+                                                    <img src="<?= base_url('assets/images/users/avatar-3.jpg')?>" alt="" class="avatar-xs rounded-circle me-2">
                                                     <a href="#" class="text-body">Marion Walker</a>
                                                 </td>
                                                 <td>Frontend Developer</td>
@@ -186,7 +186,7 @@
                                                     </div>
                                                 </th>
                                                 <td>
-                                                    <img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-xs rounded-circle me-2">
+                                                    <img src="<?= base_url('assets/images/users/avatar-4.jpg')?>" alt="" class="avatar-xs rounded-circle me-2">
                                                     <a href="#" class="text-body">Shanon Marvin</a>
                                                 </td>
                                                 <td>Backend Developer</td>

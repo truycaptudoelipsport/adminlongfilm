@@ -19,8 +19,8 @@
                     <div>
 
                         <a href="/" class="mb-5 d-block auth-logo">
-                            <img src="assets/images/logo-dark.png" alt="" height="22" class="logo logo-dark">
-                            <img src="assets/images/logo-light.png" alt="" height="22" class="logo logo-light">
+                            <img src="<?= base_url('assets/images/logo-dark.png')?>" alt="" height="22" class="logo logo-dark">
+                            <img src="<?= base_url('assets/images/logo-light.png')?>" alt="" height="22" class="logo logo-light">
                         </a>
                         <div class="card">
 

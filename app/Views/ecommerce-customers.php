@@ -125,7 +125,7 @@
 
                                             <td><a href="javascript: void(0);" class="text-dark fw-bold">#MN0121</a> </td>
                                             <td>
-                                                <img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-circle me-2">
+                                                <img src="<?= base_url('assets/images/users/avatar-3.jpg')?>" alt="" class="avatar-xs rounded-circle me-2">
                                                 <span>Thomas Hankins</span>
                                             </td>
                                             <td>ThomasHankins@dayrep.com</td>
@@ -151,7 +151,7 @@
 
                                             <td><a href="javascript: void(0);" class="text-dark fw-bold">#MN0120</a> </td>
                                             <td>
-                                                <img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-xs rounded-circle me-2">
+                                                <img src="<?= base_url('assets/images/users/avatar-4.jpg')?>" alt="" class="avatar-xs rounded-circle me-2">
                                                 <span>Mary Frazier</span>
                                             </td>
                                             <td>MaryFrazier@armyspy.com</td>

@@ -41,7 +41,7 @@
                                 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
                                     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                                         <div class="toast-header">
-                                            <img src="assets/images/logo-sm.png" alt="" class="me-2" height="18">
+                                            <img src="<?= base_url('assets/images/logo-sm.png')?>" alt="" class="me-2" height="18">
                                             <strong class="me-auto">Minible</strong>
                                             <small class="text-muted">11 mins ago</small>
                                             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -73,7 +73,7 @@
                                 <div style="min-height: 110px;">
                                     <div class="toast fade show" role="alert" aria-live="assertive" data-bs-autohide="false" aria-atomic="true">
                                         <div class="toast-header">
-                                            <img src="assets/images/logo-sm.png" alt="" class="me-2" height="18">
+                                            <img src="<?= base_url('assets/images/logo-sm.png')?>" alt="" class="me-2" height="18">
                                             <strong class="me-auto">Minible</strong>
                                             <small class="text-muted">11 mins ago</small>
                                             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -103,7 +103,7 @@
                                 <div style="min-height: 110px;">
                                     <div class="toast fade show" role="alert" aria-live="assertive" data-bs-autohide="false" aria-atomic="true">
                                         <div class="toast-header">
-                                            <img src="assets/images/logo-sm.png" alt="" class="me-2" height="18">
+                                            <img src="<?= base_url('assets/images/logo-sm.png')?>" alt="" class="me-2" height="18">
                                             <strong class="me-auto">Minible</strong>
                                             <small class="text-muted">11 mins ago</small>
                                             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -145,7 +145,7 @@
                                             <!-- Then put toasts within -->
                                             <div class="toast fade show" role="alert" aria-live="assertive" data-bs-autohide="false" aria-atomic="true">
                                                 <div class="toast-header">
-                                                    <img src="assets/images/logo-sm.png" alt="" class="me-2" height="18">
+                                                    <img src="<?= base_url('assets/images/logo-sm.png')?>" alt="" class="me-2" height="18">
                                                     <strong class="me-auto">Minible</strong>
                                                     <small class="text-muted">just now</small>
                                                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -157,7 +157,7 @@
 
                                             <div class="toast fade show" role="alert" aria-live="assertive" data-bs-autohide="false" aria-atomic="true">
                                                 <div class="toast-header">
-                                                    <img src="assets/images/logo-sm.png" alt="" class="me-2" height="18">
+                                                    <img src="<?= base_url('assets/images/logo-sm.png')?>" alt="" class="me-2" height="18">
                                                     <strong class="me-auto">Minible</strong>
                                                     <small class="text-muted">2 sec ago</small>
                                                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -327,7 +327,7 @@
                                     <div class="toast-container position-absolute p-3" id="toastPlacement">
                                         <div class="toast">
                                             <div class="toast-header">
-                                                <img src="assets/images/logo-sm.png" class="rounded me-2" alt="..." height="20">
+                                                <img src="<?= base_url('assets/images/logo-sm.png')?>" class="rounded me-2" alt="..." height="20">
                                                 <strong class="me-auto">Minible</strong>
                                                 <small>11 mins ago</small>
                                                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>

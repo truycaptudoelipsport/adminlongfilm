@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="mb-4">
-                                    <img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-lg rounded-circle img-thumbnail">
+                                    <img src="<?= base_url('assets/images/users/avatar-3.jpg')?>" alt="" class="avatar-lg rounded-circle img-thumbnail">
                                 </div>
                                 <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">Marion Walker</a></h5>
                                 <p class="text-muted mb-2">Frontend Developer</p>
@@ -135,7 +135,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="mb-4">
-                                    <img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-lg rounded-circle img-thumbnail">
+                                    <img src="<?= base_url('assets/images/users/avatar-4.jpg')?>" alt="" class="avatar-lg rounded-circle img-thumbnail">
                                 </div>
                                 <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">Shanon Marvin</a></h5>
                                 <p class="text-muted mb-2">Backend Developer</p>

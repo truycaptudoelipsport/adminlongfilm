@@ -5,19 +5,19 @@
             <div class="navbar-brand-box">
                 <a href="/" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                        <img src="<?= base_url('assets/images/logo-sm.png')?>" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="20">
+                        <img src="<?= base_url('assets/images/logo-dark.png')?>" alt="" height="20">
                     </span>
                 </a>
 
                 <a href="/" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                        <img src="<?= base_url('assets/images/logo-sm.png')?>" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="20">
+                        <img src="<?= base_url('assets/images/logo-light.png')?>" alt="" height="20">
                     </span>
                 </a>
             </div>
@@ -93,7 +93,7 @@
                         </a>
                         <a href="" class="text-reset notification-item">
                             <div class="d-flex align-items-start">
-                                <img src="assets/images/users/avatar-3.jpg"
+                                <img src="<?= base_url('assets/images/users/avatar-3.jpg')?>"
                                     class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                 <div class="flex-grow-1">
                                     <h6 class="mt-0 mb-1">James Lemire</h6>
@@ -123,7 +123,7 @@
 
                         <a href="" class="text-reset notification-item">
                             <div class="d-flex align-items-start">
-                                <img src="assets/images/users/avatar-4.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                <img src="<?= base_url('assets/images/users/avatar-4.jpg')?>" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                 <div class="flex-grow-1">
                                     <h6 class="mt-0 mb-1">Salena Layfield</h6>
                                     <div class="font-size-12 text-muted">

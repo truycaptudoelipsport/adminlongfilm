@@ -65,7 +65,7 @@
                                 </a>
 
                                 <a href="#" class="d-flex align-items-start">
-                                    <img class="d-flex me-3 rounded-circle" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image" height="36">
+                                    <img class="d-flex me-3 rounded-circle" src="<?= base_url('assets/images/users/avatar-3.jpg')?>" alt="Generic placeholder image" height="36">
                                     <div class="flex-grow-1 chat-user-box overflow-hidden">
                                         <p class="user-title m-0">Julian Rosa</p>
                                         <p class="text-muted text-truncate">What about our next..</p>
@@ -73,7 +73,7 @@
                                 </a>
 
                                 <a href="#" class="d-flex align-items-start">
-                                    <img class="d-flex me-3 rounded-circle" src="assets/images/users/avatar-4.jpg" alt="Generic placeholder image" height="36">
+                                    <img class="d-flex me-3 rounded-circle" src="<?= base_url('assets/images/users/avatar-4.jpg')?>" alt="Generic placeholder image" height="36">
                                     <div class="flex-grow-1 chat-user-box overflow-hidden">
                                         <p class="user-title m-0">David Medina</p>
                                         <p class="text-muted text-truncate">Yeah everything is fine</p>

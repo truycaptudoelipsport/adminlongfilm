@@ -7,6 +7,36 @@
 
     <?= $this->include('partials/head-css') ?>
     <link href="<?= base_url("assets/libs/dropzone/min/dropzone.min.css") ?>" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .editable {
+            padding: 10px;
+
+            display: inline-block;
+        }
+
+        /* this class is handled by Editable */
+        .is-modified {
+            background: #bff;
+        }
+
+        /* this class is handled by Editable */
+        .is-editing {
+            background: #bfb;
+            outline: none;
+        }
+        .upload-image-center {
+            position: absolute;
+            top: 50%;
+            left: 58%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            opacity: 0.4;
+        }
+        .upload-image-center img{
+            width: 50%;
+        }
+
+    </style>
 </head>
 
 <?= $this->include('partials/body') ?>
@@ -19,6 +49,7 @@
     <!-- ============================================================== -->
     <!-- Start right Content here -->
     <!-- ============================================================== -->
+
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
@@ -32,13 +63,17 @@
                                     <div class="col-xl-5">
                                         <div class="product-detail">
                                             <div class="row">
-                                                <div class="col-12">
-                                                    <div class="tab-content position-relative" id="v-pills-tabContent">
+                                                <div class="col-12" style="position: relative;">
+                                                    <div class="upload-image-center" style="display: none">
+                                                        <input type="file" style="opacity: 0 ;z-index: 99">
+                                                    </div>
+                                                    <div class="tab-content position-relative" id="v-pills-tabContent" >
                                                         <div class="product-wishlist">
                                                             <a href="#">
                                                                 <i class="mdi mdi-heart-outline"></i>
                                                             </a>
                                                         </div>
+
                                                         <div class="tab-pane fade show active" id="product-1" role="tabpanel">
                                                             <div class="product-img">
                                                                 <img src="<?= base_url('assets/images/product/img-1.png')?>" alt="" class="img-fluid mx-auto d-block" data-zoom="assets/images/product/img-1.png">
@@ -62,27 +97,24 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <div class="row">
-                                                        <div class="col-3">
-                                                            <a class="nav-link active" id="product-1-tab" data-bs-toggle="pill" href="#product-1" role="tab">
-                                                                <img src="<?= base_url('assets/images/product/img-1.png')?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-3">
-                                                            <a class="nav-link" id="product-2-tab" data-bs-toggle="pill" href="#product-2" role="tab">
-                                                                <img src="<?= base_url('assets/images/product/img-2.png')?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-3">
-                                                            <a class="nav-link" id="product-3-tab" data-bs-toggle="pill" href="#product-3" role="tab">
-                                                                <img src="<?= base_url('assets/images/product/img-3.png')?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-3">
-                                                            <a class="nav-link" id="product-4-tab" data-bs-toggle="pill" href="#product-4" role="tab">
-                                                                <img src="<?= base_url('assets/images/product/img-6.png')?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
-                                                            </a>
-                                                        </div>
+                                                    <div class="nav row nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                        <a class="nav-link active col-3" id="product-1-tab" data-bs-toggle="pill" href="#product-1" role="tab">
+                                                            <img src="<?= base_url('assets/images/product/img-1.png')?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                        </a>
+                                                        <a class="nav-link col-3" id="product-2-tab" data-bs-toggle="pill" href="#product-2" role="tab">
+                                                            <img src="<?= base_url('assets/images/product/img-2.png')?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                        </a>
+
+
+                                                        <a class="nav-link col-3" id="product-3-tab" data-bs-toggle="pill" href="#product-3" role="tab">
+                                                            <img src="<?= base_url('assets/images/product/img-3.png')?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                        </a>
+
+
+                                                        <a class="nav-link col-3" id="product-4-tab" data-bs-toggle="pill" href="#product-4" role="tab">
+                                                            <img src="<?= base_url('assets/images/product/img-6.png')?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                        </a>
+
                                                     </div>
                                                 </div>
 
@@ -92,30 +124,32 @@
                                     </div>
 
                                     <div class="col-xl-7" data-id="1" id="table-1">
-                                        <a class="btn btn-outline-secondary btn-sm edit " title="Edit">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </a>
                                         <div class="mt-4 mt-xl-3 ps-xl-4">
-                                            <h4  data-field="name" class="font-size-20 mb-3">Film Xuất khẩu nước ngoài</h4>
+
+                                            <h4 data-field="name" class="font-size-20 mb-3 editable " data-cid="tensp"><?= $product_detail["tensp"] ?></h4>
                                             <div class="text-muted">
                                                 <span class="badge bg-success font-size-14 me-1"><i class="mdi mdi-star"></i> 4.2</span> 234 Reviews
                                             </div>
+                                            <?php
+                                               $giagiam =  round(($product_detail["giasp"] - $product_detail["giagiam"]) * 100 / $product_detail["giasp"])
+                                            ?>
+                                            <h5 class="mt-4 pt-2 editable" data-cid="giagiam" >
+                                                <del class="text-muted me-2 editable" data-cid="giagiam">
+                                                    <?= $product_detail["giagiam"]?></del> </h5>
+                                                <span class="editable" data-cid="giasp"><?= $product_detail["giasp"] ?></span>
+                                                <span class="text-danger font-size-14 ms-2"> Giảm ( <?= $product_detail["giagiam"] ? $giagiam : 0 ?> %) </span>
 
-                                            <h5 class="mt-4 pt-2"><del class="text-muted me-2">$280</del>$260 <span class="text-danger font-size-14 ms-2">- 20 % Off</span></h5>
-
-                                            <p class="mt-4 text-muted">If several languages coalesce, the grammar of the resulting language is more simple and regular</p>
 
                                             <div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="mt-3">
-
-                                                            <h5 class="font-size-14">Specification :</h5>
+                                                            <h5 class="font-size-14">Nổi bật :</h5>
                                                             <ul class="list-unstyled product-desc-list text-muted">
-                                                                <li><i class="mdi mdi-circle-medium me-1 align-middle"></i> High Quality</li>
-                                                                <li><i class="mdi mdi-circle-medium me-1 align-middle"></i> Leather</li>
-                                                                <li><i class="mdi mdi-circle-medium me-1 align-middle"></i> All Sizes available</li>
-                                                                <li><i class="mdi mdi-circle-medium me-1 align-middle"></i> 4 Different Color</li>
+                                                                <li><i class="mdi mdi-circle-medium me-1 align-middle"></i> Không Nhăn</li>
+                                                                <li><i class="mdi mdi-circle-medium me-1 align-middle"></i> Xuất xứ Hàn Quốc</li>
+                                                                <li><i class="mdi mdi-circle-medium me-1 align-middle"></i> Chống trầy</li>
+                                                                <li><i class="mdi mdi-circle-medium me-1 align-middle"></i> Dễ vệ sinh</li>
                                                             </ul>
 
                                                         </div>
@@ -123,29 +157,13 @@
 
                                                     <div class="col-md-6">
                                                         <div class="mt-3">
-                                                            <h5 class="font-size-14">Services :</h5>
+                                                            <h5 class="font-size-14">Dịch vụ : </h5>
                                                             <ul class="list-unstyled product-desc-list text-muted">
-                                                                <li><i class="uil uil-exchange text-primary me-1 font-size-16"></i> 10 Days Replacement</li>
-                                                                <li><i class="uil uil-bill text-primary me-1 font-size-16"></i> Cash on Delivery available</li>
+                                                                <li><i class="uil uil-exchange text-primary me-1 font-size-16"></i> 10 ngày dùng thử</li>
+                                                                <li><i class="uil uil-bill text-primary me-1 font-size-16"></i> Bảo hành trọn đời </li>
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                </div>
-
-                                                <div class="mt-3">
-
-                                                    <h5 class="font-size-14 mb-3"><i class="uil uil-location-pin-alt font-size-20 text-primary align-middle me-2"></i> Delivery location</h5>
-
-                                                    <div class="d-inline-flex">
-
-                                                        <div class="input-group mb-3">
-                                                            <input type="text" class="form-control" placeholder="Enter Delivery pincode ">
-
-                                                            <button class="btn btn-light" type="button">Check</button>
-
-                                                        </div>
-                                                    </div>
-
                                                 </div>
 
                                                 <div class="row">
@@ -156,21 +174,21 @@
                                                                 <li class="list-inline-item">
                                                                     <a href="#" class="active" data-bs-toggle="tooltip" data-bs-placement="top" title="Gray">
                                                                         <div class="product-color-item">
-                                                                            <img src="assets/images/product/img-1.png" alt="" class="avatar-md">
+                                                                            <img src="<?= base_url('assets/images/product/img-1.png') ?>" alt="" class="avatar-md">
                                                                         </div>
                                                                     </a>
                                                                 </li>
                                                                 <li class="list-inline-item">
                                                                     <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Dark">
                                                                         <div class="product-color-item">
-                                                                            <img src="assets/images/product/img-2.png" alt="" class="avatar-md">
+                                                                            <img src="<?= base_url('assets/images/product/img-2.png') ?>" alt="" class="avatar-md">
                                                                         </div>
                                                                     </a>
                                                                 </li>
                                                                 <li class="list-inline-item">
                                                                     <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Purple">
                                                                         <div class="product-color-item">
-                                                                            <img src="assets/images/product/img-3.png" alt="" class="avatar-md">
+                                                                            <img src="<?= base_url('assets/images/product/img-3.png') ?>" alt="" class="avatar-md">
                                                                         </div>
                                                                     </a>
                                                                 </li>
@@ -225,7 +243,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-3 col-md-2">
                                                         <div>
-                                                            <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block">
+                                                            <img src="<?= base_url('assets/images/product/img-6.png')?>" alt="" class="img-fluid mx-auto d-block">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-9 col-md-10">
@@ -297,37 +315,19 @@
 </div>
 <!-- END layout-wrapper -->
 <?= $this->include('partials/vendor-scripts') ?>
+<?= $this->include('basejquery/edit-table') ?>
 <script src="<?= base_url('assets/libs/dropzone/min/dropzone.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/app.js')?>"></script>
-<script src="<?= base_url('assets/libs/table-edits/build/table-edits.min.js')?>"></script>
-
 <script>
-    $(function() {
-        var pickers = {};
-        $('.edits-product #table-1').editable({
-            edit: function(values) {
-                $(".edit i", this).removeClass('fa-pencil-alt').addClass('fa-save').attr('title', 'Save');
-            },
-            save: function(values) {
-                $(".edit i", this).removeClass('fa-save').addClass('fa-pencil-alt').attr('title', 'Edit');
-                if(this in pickers) {
-                    pickers[this].destroy();
-                    delete pickers[this];
-                }
-            },
-            cancel: function(values) {
-                $(".edit i", this).removeClass('fa-save').addClass('fa-pencil-alt').attr('title', 'Edit');
-                if(this in pickers) {
-                    pickers[this].destroy();
-                    delete pickers[this];
-                }
-            }
-        });
-    });
 
-
+    $("#v-pills-tabContent").hover(
+        function() {
+            $('#v-pills-tabContent .upload-image-center').css('display','block');
+        }, function() {
+            $('#v-pills-tabContent .upload-image-center').css('display','none');
+        }
+    );
 </script>
-
 </body>
 
 </html>

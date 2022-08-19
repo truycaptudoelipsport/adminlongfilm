@@ -451,7 +451,7 @@
                                                             <i class="mdi mdi-heart-outline"></i>
                                                         </a>
                                                     </div>
-                                                    <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block">
+                                                    <img src="<?= base_url('assets/images/product/img-6.png')?>" alt="" class="img-fluid mx-auto d-block">
                                                 </div>
 
                                                 <div class="text-center product-content p-4">
