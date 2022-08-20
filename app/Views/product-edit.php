@@ -64,8 +64,8 @@
                                         <div class="product-detail">
                                             <div class="row">
                                                 <div class="col-12" style="position: relative;">
-                                                    <div class="upload-image-center" style="display: none">
-                                                        <input type="file" style="opacity: 0 ;z-index: 99">
+                                                    <div class="upload-image-center" >
+                                                        <img  src="<?= base_url("assets/images/upload/other/cloud.png")?>">
                                                     </div>
                                                     <div class="tab-content position-relative" id="v-pills-tabContent" >
                                                         <div class="product-wishlist">
@@ -316,15 +316,20 @@
 <!-- END layout-wrapper -->
 <?= $this->include('partials/vendor-scripts') ?>
 <?= $this->include('basejquery/edit-table') ?>
-<script src="<?= base_url('assets/libs/dropzone/min/dropzone.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/app.js')?>"></script>
+<?= $this->include('base/modal_upload_image') ?>
 <script>
 
     $("#v-pills-tabContent").hover(
         function() {
-            $('#v-pills-tabContent .upload-image-center').css('display','block');
+            $('#v-pills-tabContent .upload-image-center').show();
         }, function() {
-            $('#v-pills-tabContent .upload-image-center').css('display','none');
+            $('#v-pills-tabContent .upload-image-center').hide();
+        }
+    );
+    $(".upload-image-center").click(
+        function () {
+            $('.bs-example-modal-xl').modal('show');
         }
     );
 </script>

@@ -35,6 +35,9 @@ $routes->get('/', 'Home::index');
 //Sản phẩm
 $routes->add('product','ProductController::index');
 $routes->add('product/edit/(:num)','ProductController::edit/$1');
+//Page
+$routes->get('/', 'PageController::index');
+$routes->post('page/fileUpload', 'PageController::fileUpload');
 
 //Layout page routing
 $routes->get('layouts-horizontal', 'Home::show_layouts_horizontal');
