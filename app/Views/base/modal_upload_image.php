@@ -19,7 +19,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body " >
                 <div>
                     <form action="<?=base_url('page/fileUpload')?>" class="dropzone">
                         <div class="fallback">
@@ -29,20 +29,23 @@
                             <div class="mb-3">
                                 <i class="display-4 text-muted uil uil-cloud-upload"></i>
                             </div>
-
                             <h4>Chọn hình ảnh cần tải lên.</h4>
                         </div>
                         <!-- CSRF token -->
                         <input type="hidden" class="txt_csrfname" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-
+                        <input type="hidden" class="name_file" name="file_name" value="<?= $file_name ?>" />
                     </form>
                     <div class="text-center mt-4">
                         <button type="button" class="btn btn-primary waves-effect waves-light" id="uploadFile">Upload</button>
                     </div>
-
                 </div>
-
-
+            </div>
+            <div class="modal-body" >
+                <div>
+                        <div class="needsclick">
+                            <h4>Hình ảnh đã tải </h4>
+                        </div>
+                </div>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

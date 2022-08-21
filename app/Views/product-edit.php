@@ -40,6 +40,8 @@
 </head>
 
 <?= $this->include('partials/body') ?>
+<!-- file_name_product -->
+
 
 <!-- Begin page -->
 <div id="layout-wrapper">
@@ -63,6 +65,47 @@
                                     <div class="col-xl-5">
                                         <div class="product-detail">
                                             <div class="row">
+                                                <?php $product_detail["image"] = unserialize($product_detail["image"]);if(($product_detail["image"]) != null) {?>
+                                                    <div class="col-12" style="position: relative;">
+                                                        <div class="upload-image-center" >
+                                                            <img  src="<?= base_url("assets/images/upload/other/cloud.png")?>">
+                                                        </div>
+                                                        <div class="tab-content position-relative" id="v-pills-tabContent" >
+                                                            <div class="product-wishlist">
+                                                                <a href="#">
+                                                                    <i class="mdi mdi-heart-outline"></i>
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="tab-pane fade show active" id="product-0" role="tabpanel">
+                                                                <div class="product-img">
+                                                                    <img src="<?= base_url($product_detail["image"][0])?>" alt="" class="img-fluid mx-auto d-block" data-zoom="<?= base_url($product_detail["image"][0])?>">
+                                                                </div>
+                                                            </div>
+                                                            <?php for($i=1;$i<count($product_detail["image"]);$i++) {
+                                                            ?>
+                                                            <div class="tab-pane fade" id="product-<?= $i ?>" role="tabpanel">
+                                                                <div class="product-img">
+                                                                    <img src="<?= base_url($product_detail["image"][$i])?>" alt="" class="img-fluid mx-auto d-block">
+                                                                </div>
+                                                            </div>
+                                                            <?php } ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="nav row nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                            <a class="nav-link active col-3" id="product-0-tab" data-bs-toggle="pill" href="#product-0" role="tab">
+                                                                <img src="<?= base_url($product_detail["image"][0])?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                            </a>
+                                                            <?php for($i=1;$i<count($product_detail["image"]);$i++) {
+                                                                ?>
+                                                            <a class="nav-link col-3" id="product-<?= $i ?>-tab" data-bs-toggle="pill" href="#product-<?= $i ?>" role="tab">
+                                                                <img src="<?= base_url($product_detail["image"][$i])?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                            </a>
+                                                            <?php }?>
+                                                        </div>
+                                                    </div>
+                                                <?php }else{ ?>
                                                 <div class="col-12" style="position: relative;">
                                                     <div class="upload-image-center" >
                                                         <img  src="<?= base_url("assets/images/upload/other/cloud.png")?>">
@@ -118,7 +161,7 @@
                                                     </div>
                                                 </div>
 
-
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
@@ -317,7 +360,7 @@
 <?= $this->include('partials/vendor-scripts') ?>
 <?= $this->include('basejquery/edit-table') ?>
 <script src="<?= base_url('assets/js/app.js')?>"></script>
-<?= $this->include('base/modal_upload_image') ?>
+
 <script>
 
     $("#v-pills-tabContent").hover(

@@ -15,6 +15,7 @@ class ProductController extends BaseController
     }
     public function edit($id_product)
     {
+
         $data = [
             'title_meta' => view('partials/title-meta', ['title' => 'Sửa Sản phẩm']),
             'page_title' => view('partials/page-title', ['title' => 'Sửa sản phẩm '.$id_product, 'pagetitle' => 'Sản phẩm'])
@@ -22,6 +23,7 @@ class ProductController extends BaseController
         $product_model = new ProductModel();
         $product_detail = $product_model->get_products_by_id($id_product);
         $data["product_detail"] = $product_detail;
+        $file["file_name"] = "product/" . $product_detail["id"];
         if($this->request->getMethod() == "post"){
             $product_update[$this->request->getVar("cid")] = $this->request->getVar("name");
             if($product_update["giagiam"])
@@ -32,6 +34,6 @@ class ProductController extends BaseController
             $product_model->update($id_product,$product_update);
 
         }
-        return view('product-edit',$data);
+        return view('product-edit',$data).view('base/modal_upload_image',$file);
     }
 }

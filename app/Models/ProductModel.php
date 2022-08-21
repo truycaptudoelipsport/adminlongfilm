@@ -7,10 +7,13 @@ class ProductModel extends Model
     protected $table = 'product';
     protected $primaryKey = 'id';
 
+    protected $allowedFields = ['tensp', 'giagiam','giasp','image','metakey','metades','metatitle'];
     protected function initialize()
     {
-        $this->allowedFields[] = 'tensp';
-        $this->allowedFields[] = 'giagiam';
+
+//        $this->allowedFields[] = 'tensp';
+//        $this->allowedFields[] = 'giagiam';
+
     }
     public function get_products(){
         $db = db_connect();
