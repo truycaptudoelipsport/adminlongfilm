@@ -61,7 +61,7 @@
             var id = getUrl.pathname.split('/')[3];
             // Submit your data to server
             $.ajax({
-                type:"POST",
+                type:"GET",
                 url: baseUri + "/product/edit/" + id ,
                 data:data,
             });

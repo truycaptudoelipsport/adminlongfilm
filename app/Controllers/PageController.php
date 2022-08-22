@@ -22,8 +22,8 @@ class PageController extends BaseController
         }else{
             if($file = $this->request->getFile('file')) {
                 if ($file->isValid() && ! $file->hasMoved()) {
-                    // Get file name and extension
 
+                    // Get file name and extension
                     $name = $file->getName();
                     $ext = $file->getClientExtension();
                     // Get random file name
@@ -33,11 +33,10 @@ class PageController extends BaseController
                     $spilit_name = $this->request->getGetPost("file_name");
                     $name_controller = explode("/", $spilit_name);
                     $name_image = 'uploads'."/".$name_controller[0]."/".$name_controller[1].'/'.$newName;
-
                     $image = \Config\Services::image()
                         ->withFile($file)
-                        ->resize(800, 800, true, 'height','with')
-                        ->save(FCPATH . $name_image);
+                        ->fit(595, 595, 'center')
+                        ->save(FCPATH ."/". $name_image);
 //                    $file->move('uploads'."/".$name_controller[0]."/".$name_controller[1],$newName);
                     // $name_controller[0] = controller;
                     // $name_controller[1] = id;
@@ -47,6 +46,7 @@ class PageController extends BaseController
                         if($product_detail["image"] != null) {
                             $product_detail["image"] = unserialize($product_detail["image"]);
                             array_push($product_detail["image"],$name_image);
+                            ksort($product_detail["image"]);
                             $product_detail["image"] = serialize($product_detail["image"]);
                         }else {
                             $list_image[] = $name_image;

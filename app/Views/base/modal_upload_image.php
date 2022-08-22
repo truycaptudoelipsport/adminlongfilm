@@ -40,13 +40,6 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-body" >
-                <div>
-                        <div class="needsclick">
-                            <h4>Hình ảnh đã tải </h4>
-                        </div>
-                </div>
-            </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->

@@ -84,7 +84,8 @@ phpunit
 # Composer
 #-------------------------
 vendor/
-
+# Upload
+public/uploads
 #-------------------------
 # IDE / Development Files
 #-------------------------

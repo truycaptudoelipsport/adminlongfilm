@@ -35,6 +35,9 @@
         .upload-image-center img{
             width: 50%;
         }
+        .image-cloud-upload{
+            display: none;
+        }
 
     </style>
 </head>
@@ -66,27 +69,21 @@
                                         <div class="product-detail">
                                             <div class="row">
                                                 <?php $product_detail["image"] = unserialize($product_detail["image"]);if(($product_detail["image"]) != null) {?>
-                                                    <div class="col-12" style="position: relative;">
+                                                    <div id="v-pills-tabContent" class="col-12" style="position: relative;">
                                                         <div class="upload-image-center" >
-                                                            <img  src="<?= base_url("assets/images/upload/other/cloud.png")?>">
+                                                            <img class="image-cloud-upload" src="<?= base_url("assets/images/upload/other/cloud.png")?>">
                                                         </div>
                                                         <div class="tab-content position-relative" id="v-pills-tabContent" >
-                                                            <div class="product-wishlist">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
-                                                            </div>
-
                                                             <div class="tab-pane fade show active" id="product-0" role="tabpanel">
                                                                 <div class="product-img">
                                                                     <img src="<?= base_url($product_detail["image"][0])?>" alt="" class="img-fluid mx-auto d-block" data-zoom="<?= base_url($product_detail["image"][0])?>">
                                                                 </div>
                                                             </div>
-                                                            <?php for($i=1;$i<count($product_detail["image"]);$i++) {
-                                                            ?>
-                                                            <div class="tab-pane fade" id="product-<?= $i ?>" role="tabpanel">
+                                                            <?php foreach ($product_detail["image"] as $key_image => $value_image) {
+                                                                ?>
+                                                            <div class="tab-pane fade " id="product-<?= $key_image ?>" role="tabpanel">
                                                                 <div class="product-img">
-                                                                    <img src="<?= base_url($product_detail["image"][$i])?>" alt="" class="img-fluid mx-auto d-block">
+                                                                    <img src="<?= base_url($value_image)?>" onerror="ImgError(this)" alt="" class="img-fluid mx-auto d-block">
                                                                 </div>
                                                             </div>
                                                             <?php } ?>
@@ -94,13 +91,11 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="nav row nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                                            <a class="nav-link active col-3" id="product-0-tab" data-bs-toggle="pill" href="#product-0" role="tab">
-                                                                <img src="<?= base_url($product_detail["image"][0])?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
-                                                            </a>
-                                                            <?php for($i=1;$i<count($product_detail["image"]);$i++) {
+                                                            <?php foreach ($product_detail["image"] as $key_image => $value_image) {
                                                                 ?>
-                                                            <a class="nav-link col-3" id="product-<?= $i ?>-tab" data-bs-toggle="pill" href="#product-<?= $i ?>" role="tab">
-                                                                <img src="<?= base_url($product_detail["image"][$i])?>" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                            <a class="nav-link col-3" id="product-<?= $key_image ?>-tab" data-bs-toggle="pill" href="#product-<?= $key_image ?>" role="tab" style="position: relative;display: block;">
+                                                                <img src="<?= base_url($value_image)?>" onerror="ImgError(this)" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                                <i class="fas fa-window-close"  data-idimage="<?= $key_image ?>" style="position: absolute;top: 0;right: 0;color: red"></i>
                                                             </a>
                                                             <?php }?>
                                                         </div>
@@ -108,14 +103,9 @@
                                                 <?php }else{ ?>
                                                 <div class="col-12" style="position: relative;">
                                                     <div class="upload-image-center" >
-                                                        <img  src="<?= base_url("assets/images/upload/other/cloud.png")?>">
+                                                        <img  class="image-cloud-upload" src="<?= base_url("assets/images/upload/other/cloud.png")?>">
                                                     </div>
                                                     <div class="tab-content position-relative" id="v-pills-tabContent" >
-                                                        <div class="product-wishlist">
-                                                            <a href="#">
-                                                                <i class="mdi mdi-heart-outline"></i>
-                                                            </a>
-                                                        </div>
 
                                                         <div class="tab-pane fade show active" id="product-1" role="tabpanel">
                                                             <div class="product-img">
@@ -176,10 +166,10 @@
                                             <?php
                                                $giagiam =  round(($product_detail["giasp"] - $product_detail["giagiam"]) * 100 / $product_detail["giasp"])
                                             ?>
-                                            <h5 class="mt-4 pt-2 editable" data-cid="giagiam" >
-                                                <del class="text-muted me-2 editable" data-cid="giagiam">
-                                                    <?= $product_detail["giagiam"]?></del> </h5>
-                                                <span class="editable" data-cid="giasp"><?= $product_detail["giasp"] ?></span>
+                                                 <span class="mt-4 pt-2 editable " data-cid="giagiam" >
+                                                    <del class="text-muted me-2 " ><?= number_format($product_detail["giagiam"])?></del>
+                                                 </span>
+                                                <h5 class="editable " data-cid="giasp" ><?= number_format($product_detail["giasp"]) ?></h5>
                                                 <span class="text-danger font-size-14 ms-2"> Giảm ( <?= $product_detail["giagiam"] ? $giagiam : 0 ?> %) </span>
 
 
@@ -354,20 +344,42 @@
         <?= $this->include('partials/footer') ?>
     </div>
     <!-- end main content-->
-
+</div>
+<div class="modal fade staticBackdrop"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Xác nhận xóa hình ảnh</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <form action="<?= base_url("product/remove_image") ?>" method="GET" id="image_form_delete">
+            <div class="modal-body">
+                    <input id="product_id"  name="product_id" type="hidden" value="<?= $product_detail["id"] ?>">
+                    <input id="id_image" name="id_image" type="hidden" value="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Đóng</button>
+                <button type="submit" form="image_form_delete"  class="btn btn-primary">Xác nhận</button>
+            </div>
+            </form>
+        </div>
+    </div>
 </div>
 <!-- END layout-wrapper -->
 <?= $this->include('partials/vendor-scripts') ?>
 <?= $this->include('basejquery/edit-table') ?>
+
 <script src="<?= base_url('assets/js/app.js')?>"></script>
+<script src="<?= base_url('assets/js/base/help-function.js')?>"></script>
 
 <script>
 
     $("#v-pills-tabContent").hover(
         function() {
-            $('#v-pills-tabContent .upload-image-center').show();
+            $('#v-pills-tabContent .image-cloud-upload').show();
         }, function() {
-            $('#v-pills-tabContent .upload-image-center').hide();
+            $('#v-pills-tabContent .image-cloud-upload').hide();
         }
     );
     $(".upload-image-center").click(
@@ -375,6 +387,19 @@
             $('.bs-example-modal-xl').modal('show');
         }
     );
+    $(".fa-window-close").click(
+        function () {
+            $('#id_image').val($(this).attr("data-idimage"));
+            $('.staticBackdrop').modal('show');
+        }
+    );
+    function ImgError(source){
+        var base_url = window.location.origin;
+        source.src = base_url+"/uploads/404_image.jpg";
+        source.onerror = "";
+        return true;
+    }
+
 </script>
 </body>
 

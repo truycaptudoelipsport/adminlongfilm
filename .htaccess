@@ -10,3 +10,4 @@ RewriteCond $1 !^public/(index\.php|images|assets|css|js|robots\.txt|favicon\.ic
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule (.*) public/index.php/$1 [L]
+RewriteRule ^(.*)$ index.php?/$1 [L]
