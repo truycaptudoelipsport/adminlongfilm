@@ -34,7 +34,8 @@ $routes->get('/', 'Home::index');
 
 //Sản phẩm
 $routes->add('product','ProductController::index');
-$routes->add('product/edit/(:num)','ProductController::edit/$1');
+$routes->get('product/edit/(:num)','ProductController::edit/$1');
+$routes->add('product/update','ProductController::update');
 $routes->add('product/remove_image','ProductController::remove_image');
 //Page
 $routes->get('/', 'PageController::index');

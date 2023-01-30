@@ -7,7 +7,7 @@ class ProductModel extends Model
     protected $table = 'product';
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['tensp', 'giagiam','giasp','image','metakey','metades','metatitle'];
+    protected $allowedFields = ['tensp','loaisp','content','description','videoclip','favcolor','techinfo','ngaydang','giagiam','giasp','image','metakey','metades','metatitle','hot','home'];
     protected function initialize()
     {
 

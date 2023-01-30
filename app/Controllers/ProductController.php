@@ -20,7 +20,6 @@ class ProductController extends BaseController
             'title_meta' => view('partials/title-meta', ['title' => 'Sửa Sản phẩm']),
             'page_title' => view('partials/page-title', ['title' => 'Sửa sản phẩm '.$id_product, 'pagetitle' => 'Sản phẩm'])
         ];
-
         $product_model = new ProductModel();
         $product_detail = $product_model->get_products_by_id($id_product);
         $data["product_detail"] = $product_detail;
@@ -32,13 +31,33 @@ class ProductController extends BaseController
                 $product_update["giagiam"] = (int)$product_update["giagiam"];
             }
             $product_model->update($id_product,$product_update);
-
         }
         return view('product-edit',$data).view('base/modal_upload_image',$file);
     }
+    public function update(){
+        $resp = $this->request->getPost();
+        if($resp["hot"]){
+            $resp["hot"] = 1;
+        }
+        if($resp["home"]){
+            $resp["home"] = 1;
+        }
+        $product_model = new ProductModel();
+        $product_detail = $product_model->get_products_by_id($resp["id_product"]);
+        $product_detail["techinfo"] = $resp["pro_tech_info"];
+        $product_detail["description"] = $resp["description"];
+        $product_detail["content"] = $resp["content"];
+        $product_detail["favcolor"] = $resp["favcolor"];
+        $product_detail["hot"] = $resp["hot"];
+        $product_detail["home"] = $resp["home"];
+        if($product_model->update($resp["id_product"],$product_detail))
+        {
+            return redirect()->to('product/edit/'.$resp["id_product"]);
+        }
+    }
     public function remove_image()
     {
-        if($this->request->getMethod() == "get")
+        if($_SERVER['REQUEST_METHOD'] == "GET")
         {
             $product_id = $this->request->getGet("product_id");
             $id_image = $this->request->getGet("id_image");
