@@ -13,6 +13,27 @@ class ProductController extends BaseController
         $data["list_product"] = $product_model->get_products();
 	    return view('product',$data);
     }
+    public function add_product()
+    {
+        $data = [
+            'title_meta' => view('partials/title-meta', ['title' => 'Thêm sản phẩm']),
+            'page_title' => view('partials/page-title', ['title' => 'Thêm sản phẩm ', 'pagetitle' => 'Sản phẩm'])
+        ];
+        return view('product-add',$data);
+    }
+    public function add()
+    {
+        $resp = $this->request->getPost();
+        if($resp["hot"]){
+            $resp["hot"] = 1;
+        }
+        if($resp["home"]){
+            $resp["home"] = 1;
+        }
+        $data = "";
+        $file = "" ;
+        return view('product-add',$data).view('base/modal_upload_image',$file);
+    }
     public function edit($id_product)
     {
 

@@ -34,9 +34,11 @@ $routes->get('/', 'Home::index');
 
 //Sản phẩm
 $routes->add('product','ProductController::index');
+$routes->add('product/add','ProductController::add');
 $routes->get('product/edit/(:num)','ProductController::edit/$1');
 $routes->add('product/update','ProductController::update');
 $routes->add('product/remove_image','ProductController::remove_image');
+$routes->add('product/add_product','ProductController::add_product');
 //Page
 $routes->get('/', 'PageController::index');
 $routes->post('page/fileUpload', 'PageController::fileUpload');

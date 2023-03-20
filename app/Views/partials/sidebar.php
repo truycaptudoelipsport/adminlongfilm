@@ -41,10 +41,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('product') ?>">
-                        <i class="fas fa-store"></i>
-                        <span>Sản Phẩm</span>
-                    </a>
+                    <a class="has-arrow waves-effect" href="javascript: void(0);"><i class="fas fa-store"></i><span>Sản Phẩm</span></a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="<?php echo base_url('product/add_product') ?>"> <span>Thêm sản phẩm</span></a></li>
+                        <li><a href="<?php echo base_url('product') ?>"> <span> Tất cả sản phẩm</span></a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
